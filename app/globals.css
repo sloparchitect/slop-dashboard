@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* Dark by default, high contrast for dense data */
+  --color-bg:          oklch(0.145 0.012 260);
+  --color-bg-elevated: oklch(0.19  0.014 260);
+  --color-border:      oklch(0.28  0.014 260);
+  --color-muted:       oklch(0.68  0.02  260);
+  --color-fg:          oklch(0.97  0.005 260);
+  --color-accent:      oklch(0.72  0.18  150); /* green */
+  --color-youtube:     oklch(0.65  0.22  25);  /* red */
+  --color-tiktok:      oklch(0.78  0.16  200); /* cyan */
+  --color-danger:      oklch(0.65  0.22  25);
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+/* Tabular numerals in tables + metric cards so columns line up */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbar for long transcripts */
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
